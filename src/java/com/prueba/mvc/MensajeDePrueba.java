@@ -5,7 +5,13 @@
  */
 package com.prueba.mvc;
 
+import com.google.gson.Gson;
+import com.prueba.model.Persona;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.catalina.Session;
@@ -25,15 +31,28 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/mensaje1.htm")
 public class MensajeDePrueba {
 
-
     @RequestMapping
     public ModelAndView pruebaDeMensaje(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
 
         ModelAndView mv = new ModelAndView("mensaje1");
 
         mv.addObject("men", "mensaje de prueba2");
+        Gson gson = new Gson();
+        Persona persona = new Persona();
+        List listaPersonas = new ArrayList();
 
+         
+          persona.setNombre("polloman");
+          persona.setApellido("lopez");
+          persona.setAlias("elpolloloco");
+          
+          listaPersonas.add(persona);
+    
+        String elgson = gson.toJson(listaPersonas);
 
+        System.out.println(elgson);
+
+        mv.addObject("elgson", elgson);
         return mv;
     }
 
