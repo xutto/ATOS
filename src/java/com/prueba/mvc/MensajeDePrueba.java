@@ -32,7 +32,7 @@ public class MensajeDePrueba {
         ModelAndView mv = new ModelAndView("mensaje1");
 
         mv.addObject("men", "mensaje de prueba2");
-        System.out.println("polloman");
+
 
         return mv;
     }

@@ -13,9 +13,10 @@
     <body>
         <h1>${men}</h1>
         <spring:message code="mensaje.prueba.hello"/>
+        <c:set value="polloloco" var="nombre"/>
         
         <br/>
-                <a href="mensaje1.htm?lenguaje=es">pinchaR AQUI para español</a><br/>
+                <a href="mensaje1.htm?lenguaje=es">pinchaR AQUI para español ${nombre}</a><br/>
         <a href="mensaje1.htm?lenguaje=en">pinchaR AQUI para ingles</a><br/>
         
     </body>
