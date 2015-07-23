@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.gruposantander.es/webservices/genericFault" 
+	xmlns:tns="http://www.gruposantander.es/webservices/genericFault" 
+	xmlns:TDCs="http://www.isban.es/webservices/TDCs"
+	elementFormDefault="unqualified">
+
+  <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./ws_TDCs.xsd"/>
+
+  <xs:element name="Exception">
+    <xs:complexType>
+    	<xs:sequence>
+  	  	  <xs:element name="faultCode" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+  		  <xs:element name="code" type="tns:faultcode"/>
+  		  <xs:element name="reasons" type="tns:faultreasons"/>
+  		  <xs:element name="processInfo" type="tns:ProcessInfo"/>
+   		  <xs:element name="technicalException" type="tns:TechnicalException"/>
+  		  <xs:element name="additionalInfo" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+  	  </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="faultcode">
+    <xs:sequence>
+      <xs:element name="Value" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+      <xs:element name="Subcode" type="tns:subcode" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="subcode">
+    <xs:sequence>
+      <xs:element name="Value" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="faultreasons">
+    <xs:sequence>
+		<xs:element maxOccurs="unbounded" minOccurs="0" name="reason" type="tns:faultreason"/>
+	</xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="faultreason">
+  	<xs:sequence>
+  		<xs:element name="lang" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+  		<xs:element name="text" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+    </xs:sequence>
+  </xs:complexType> 
+  
+  <xs:complexType name="ProcessInfo">
+  	<xs:sequence>
+      <xs:element name="processIncomingMessage" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+      <xs:element name="processID" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+      <xs:element name="processName" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="TechnicalException">
+  	<xs:sequence>
+      <xs:element name="technicalPlatform" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+      <xs:element name="platformCode" type="TDCs:DESCRIPCION_GENERAL_Type"/>
+      <!--
+      <xs:element name="message" type="xs:string"/>
+      <xs:element name="stackTrace" type="xs:string"/>
+      -->
+      <xs:element name="message" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+      <xs:element name="stackTrace" type="TDCs:TEXTO_MULTILINEA_Type"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

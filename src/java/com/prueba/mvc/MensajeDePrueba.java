@@ -7,6 +7,7 @@ package com.prueba.mvc;
 
 import com.google.gson.Gson;
 import com.prueba.model.Persona;
+import com.prueba.ws.clients.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,19 +39,31 @@ public class MensajeDePrueba {
 
         mv.addObject("men", "mensaje de prueba2");
         Gson gson = new Gson();
-        Persona persona = new Persona();
+
         List listaPersonas = new ArrayList();
 
-         
-          persona.setNombre("polloman");
-          persona.setApellido("lopez");
-          persona.setAlias("elpolloloco");
-          
-          listaPersonas.add(persona);
-    
+        for (int i = 0; i < 10; i++) {
+
+            Persona persona = new Persona();
+            persona.setNombre("nombre_persona_" + i);
+            persona.setApellido("apellido_persona_" + i);
+            persona.setAlias("alias_persona_" + i);
+            listaPersonas.add(persona);
+        }
+        
+        try{
+        AgfaSegWSClientAuthenticate agfaSegWSClientAuthenticate = new AgfaSegWSClientAuthenticate();
+        String WSclientResult = agfaSegWSClientAuthenticate.authenticateCallClient(null);
+        System.out.println(WSclientResult);
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+
         String elgson = gson.toJson(listaPersonas);
 
         System.out.println(elgson);
+        
 
         mv.addObject("elgson", elgson);
         return mv;

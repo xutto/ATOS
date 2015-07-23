@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/datos/workspace/ATOS/web/wsdl/ACFACSEGSecurity_v1.wsdl" uri="src/conf/xml-resources/web-service-references/ACFACSEGSecurity_v1/wsdl/ACFACSEGSecurity_v1.wsdl"/>
+    <system systemId="file:/C:/datos/workspace/ATOS/web/wsdl/AGFASEG/ACFACSEGSecurity_v1.wsdl" uri="src/conf/xml-resources/web-service-references/ACFACSEGSecurity_v1/wsdl/ACFACSEGSecurity_v1.wsdl"/>
+    <system systemId="file:/C:/datos/workspace/ATOS/web/wsdl/AGFASEG/schemas/fault.xsd" uri="src/conf/xml-resources/web-service-references/ACFACSEGSecurity_v1/wsdl/schemas/fault.xsd"/>
+    <system systemId="file:/C:/datos/workspace/ATOS/web/wsdl/AGFASEG/schemas/ACFACSEGSecurity_functionalFaults_v1.xsd" uri="src/conf/xml-resources/web-service-references/ACFACSEGSecurity_v1/wsdl/schemas/ACFACSEGSecurity_functionalFaults_v1.xsd"/>
+    <system systemId="file:/C:/datos/workspace/ATOS/web/wsdl/AGFASEG/schemas/ACFACSEGSecurity_cb_types_v1.xsd" uri="src/conf/xml-resources/web-service-references/ACFACSEGSecurity_v1/wsdl/schemas/ACFACSEGSecurity_cb_types_v1.xsd"/>
+    <system systemId="file:/C:/datos/workspace/ATOS/web/wsdl/AGFASEG/schemas/ws_TDCs.xsd" uri="src/conf/xml-resources/web-service-references/ACFACSEGSecurity_v1/wsdl/schemas/ws_TDCs.xsd"/>
+    <system systemId="file:/C:/datos/workspace/ATOS/web/wsdl/AGFASEG/schemas/ws_TDCc.xsd" uri="src/conf/xml-resources/web-service-references/ACFACSEGSecurity_v1/wsdl/schemas/ws_TDCc.xsd"/>
+</catalog>

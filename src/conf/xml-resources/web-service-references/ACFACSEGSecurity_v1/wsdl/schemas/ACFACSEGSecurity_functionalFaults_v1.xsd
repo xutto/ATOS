@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:TDCc="http://www.isban.es/webservices/TDCc" xmlns:TDCs="http://www.isban.es/webservices/TDCs" xmlns:tns="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/banesto/internet/functionalFaults/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/banesto/internet/functionalFaults/v1">
+    <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./ws_TDCs.xsd"/>
+    <xs:import namespace="http://www.isban.es/webservices/TDCc" schemaLocation="./ws_TDCc.xsd"/>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_NoLoggedUser">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_TechnicalError">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_ExpiredCredential">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_InvalidCredential">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_InvalidParameters">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_FirstTime">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_DuplicatedUser">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_NotActivePassword">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_ExpiredPassword">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_LockedUser">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_RevokedPassword">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_UserNotActive">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_NoExistsUser">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_NoExistsRepository">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_FailedAuthentication">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_UserNotRegisteredInService">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_NoServiceAvailable">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_RevokedSign">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_SignTypeNotPermitted">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_FailedSign">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_ExceedsValidity">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_NoExistsChallenge">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_SignDoesNotMatchOperation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_ExpiredSign">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+                <xs:element minOccurs="0" name="errorCode0" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault0" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_NewPasswordNotEqual">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_RepeatedPassword">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_InvalidKey">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_AtributoSinRestriccion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="com.isb.al.facseg.security.exc.EX_NoResults">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="errorCode" type="TDCs:CODIGO_ERROR_APP_Type"/>
+                <xs:element minOccurs="0" name="params">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="param" nillable="true" type="TDCc:DESCRIPCION_TRADUCIBLE_Type"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="messageByDefault" type="TDCs:DESCRIPCION_EXTRALARGA_Type"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

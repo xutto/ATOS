@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:TDCc="http://www.isban.es/webservices/TDCc" xmlns:TDCs="http://www.isban.es/webservices/TDCs" xmlns:cbtypes="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/banesto/internet/cbTypes/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.isban.es/webservices/TECHNICAL_FACADES/Security/F_facseg_security/banesto/internet/cbTypes/v1">
+    <xs:import namespace="http://www.isban.es/webservices/TDCs" schemaLocation="./ws_TDCs.xsd"/>
+    <xs:import namespace="http://www.isban.es/webservices/TDCc" schemaLocation="./ws_TDCc.xsd"/>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_User_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_User</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="attSurname" type="TDCs:APELLIDO_Type"/>
+            <xs:element minOccurs="0" name="attFullName" type="TDCs:NOMBRE_DE_PERSONA_Type"/>
+            <xs:element minOccurs="0" name="attUID" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="attAlias" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="attPassword" type="TDCs:PASSWORD_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="attSignKey" type="TDCs:PASSWORD_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="attLastLogonDate" type="TDCs:TIMESTAMP_ALTA_Type"/>
+            <xs:element minOccurs="0" name="attLastChangePWDate" type="TDCs:TIMESTAMP_ALTA_Type"/>
+            <xs:element minOccurs="0" name="attEntity" type="TDCs:EMPRESA_Type"/>
+            <xs:element minOccurs="0" name="attEnvironment" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="attExpirationDate" type="TDCs:FECHA_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="attFirstTimeSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attFirstTime" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attRevokedPassword" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attRevokedSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attMobile">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attMobile" nillable="true" type="TDCs:TELEFONO_INTERNACIONAL_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attCreditCardNumber">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attCreditCardNumber" nillable="true" type="TDCs:PAN_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attContractNumber">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attContractNumber" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attPersonNumber" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="attBeforeLastLogonDate" type="TDCs:TIMESTAMP_ALTA_Type"/>
+            <xs:element minOccurs="0" name="attSignMethods" type="cbtypes:com.isb.al.facseg.security.cb.CB_VerTypes_Type"/>
+            <xs:element minOccurs="0" name="attPersonalID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attPersonalID" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attName" type="TDCs:NOMBRE_DE_PERSONA_Type"/>
+            <xs:element minOccurs="0" name="attDocument" type="TDCc:DOCUM_PERSONA_CORPORATIVO_Type"/>
+            <xs:element minOccurs="0" name="attDocumentRep" type="TDCc:DOCUM_PERSONA_CORPORATIVO_Type"/>
+            <xs:element minOccurs="0" name="attLanguage" type="TDCc:IDIOMA_CORPORATIVO_Type"/>
+            <xs:element minOccurs="0" name="attLastUnsuccessLogon" type="TDCs:TIMESTAMP_ALTA_Type"/>
+            <xs:element minOccurs="0" name="attSecondSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attLastSignDate" type="TDCs:TIMESTAMP_ALTA_Type"/>
+            <xs:element minOccurs="0" name="attLogonImage" type="TDCs:URL_Type"/>
+            <xs:element minOccurs="0" name="attLogonPhrase" type="TDCs:DESCRIPCION_MEDIA_Type"/>
+            <xs:element minOccurs="0" name="attmTANRevokedSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attCompanyID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attCompanyID" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attCompanyName" type="TDCs:DESCRIPCION_MEDIA_Type"/>
+            <xs:element minOccurs="0" name="attLegalPersonNumber" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+            <xs:element minOccurs="0" name="attStartDate" type="TDCs:FECHA_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="attEndDate" type="TDCs:FECHA_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="attLockUser" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attAuthenticationLastError" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attSignByPositionsActive" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attRevocationDate" type="TDCs:TIMESTAMP_ALTA_Type"/>
+            <xs:element minOccurs="0" name="attLockDate" type="TDCs:TIMESTAMP_ALTA_Type"/>
+            <xs:element minOccurs="0" name="attPasswordActive" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_VerTypes_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_User</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="dato" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_DataToken_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_DataToken</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="dataToken" type="TDCs:DIGITAL_SIGNATURE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_ValidateDataTokenResult_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_ValidateDataTokenResult</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="data" type="TDCs:DESCRIPCION_LARGA_Type"/>
+            <xs:element minOccurs="0" name="cipherResult" type="TDCs:CODIGO_NUMERICO_1_Type"/>
+            <xs:element minOccurs="0" name="cipherData" type="TDCs:DESCRIPCION_LARGA_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_GenerateTokenDevice_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_GenerateTokenDevice_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="UID" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="traceDevice" type="TDCs:DESCRIPCION_LARGA_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_GenerateTokenDevice_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_GenerateTokenDevice_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="tokenDevice" type="TDCs:DIGITAL_SIGNATURE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_PublicKey_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_PublicKey</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="key" type="TDCs:DESCRIPCION_LARGA_Type"/>
+            <xs:element minOccurs="0" name="emitter" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="algorithm" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_ExtendedAuthData_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_ExtendedAuthData</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="user" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="positions" type="TDCs:POSITIONS_Type"/>
+            <xs:element minOccurs="0" name="posValues" type="TDCs:POSITION_VALUES_Type"/>
+            <xs:element minOccurs="0" name="alias" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="mobile" type="TDCs:TELEFONO_INTERNACIONAL_Type"/>
+            <xs:element minOccurs="0" name="card" type="TDCs:PAN_Type"/>
+            <xs:element minOccurs="0" name="numberContract" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="personalID" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="documento" type="TDCc:DOCUM_PERSONA_CORPORATIVO_Type"/>
+            <xs:element minOccurs="0" name="companyID" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_PositionsData_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_PositionsData</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="positions" type="TDCs:POSITIONS_Type"/>
+            <xs:element minOccurs="0" name="posValues" type="TDCs:POSITION_VALUES_Type"/>
+            <xs:element minOccurs="0" name="passwordLength" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_SignatureChallenge_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_SignatureChallenge_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="User" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="Type" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="Repository" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="isSecondSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="Information" type="TDCs:DESCRIPCION_LARGA_Type"/>
+            <xs:element minOccurs="0" name="OperationData">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Data" nillable="true" type="cbtypes:com.isb.al.facseg.security.cb.CB_OperationData_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_OperationData_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_SignatureChallenge_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="operationDataName" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="operationDataValue" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_SignatureChallenge_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_SignatureChallenge_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Challenge" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="Information" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_CredentialData_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_CredentialData</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="cookieCredential" type="TDCs:DESCRIPCION_LARGA_Type"/>
+            <xs:element minOccurs="0" name="tokenCredential" type="TDCs:DESCRIPCION_LARGA_Type"/>
+            <xs:element minOccurs="0" name="assertion" type="TDCs:DOCUMENTO_XML_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_AuthenticationData_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_AuthenticationData</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="user" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="password" type="TDCs:PASSWORD_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="alias" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="mobile" type="TDCs:TELEFONO_INTERNACIONAL_Type"/>
+            <xs:element minOccurs="0" name="card" type="TDCs:PAN_Type"/>
+            <xs:element minOccurs="0" name="numberContract" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="personalID" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="documento" type="TDCc:DOCUM_PERSONA_CORPORATIVO_Type"/>
+            <xs:element minOccurs="0" name="companyID" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_DataTokenValues_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_DataTokenValues</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="validity" type="TDCs:CANTIDAD_CORTA_Type"/>
+            <xs:element minOccurs="0" name="securityLevel" type="TDCs:CODIGO_NUMERICO_1_Type"/>
+            <xs:element minOccurs="0" name="data" type="TDCs:DESCRIPCION_LARGA_Type"/>
+            <xs:element minOccurs="0" name="cipherKey" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="cipherData" type="TDCs:DESCRIPCION_LARGA_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_SignaturePositionsData_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_SignaturePositionsData_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="positions" type="TDCs:POSITIONS_Type"/>
+            <xs:element minOccurs="0" name="signatureLength" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_VerifyResponse_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_VerifyResponse_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="User" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="Type" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="Repository" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="Key" type="TDCs:DIGITAL_SIGNATURE_Type"/>
+            <xs:element minOccurs="0" name="Challenge" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="OperationData">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Data" nillable="true" type="cbtypes:com.isb.al.facseg.security.cb.CB_OperationData_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_IdentificationData_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_IdentificationData</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="user" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="alias" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="mobile" type="TDCs:TELEFONO_INTERNACIONAL_Type"/>
+            <xs:element minOccurs="0" name="card" type="TDCs:PAN_Type"/>
+            <xs:element minOccurs="0" name="numberContract" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="documento" type="TDCc:DOCUM_PERSONA_CORPORATIVO_Type"/>
+            <xs:element minOccurs="0" name="personalID" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_RetrieveUserDevices_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_RetrieveUserDevices_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="UID" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="repository" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_RetrieveUserDevices_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_RetrieveUserDevices_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="UserDevice" nillable="true">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="aliasDevice" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                        <xs:element minOccurs="0" name="isActiveDevice" type="TDCs:INDICADOR_SI-NO_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_AuthPositionsCredential_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_AuthPositionsCredential_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="authenticationData" type="cbtypes:com.isb.al.facseg.security.cb.CB_ExtendedAuthData_Type"/>
+            <xs:element minOccurs="0" name="userAddress" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="newPassword" type="TDCs:PASSWORD_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="newPasswordConfirm" type="TDCs:PASSWORD_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="repository" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_AuthenticationCredential_E_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_AuthenticationCredential_E</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="authenticationData" type="cbtypes:com.isb.al.facseg.security.cb.CB_AuthenticationData_Type"/>
+            <xs:element minOccurs="0" name="userAddress" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="newPassword" type="TDCs:PASSWORD_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="newPasswordConfirm" type="TDCs:PASSWORD_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="repository" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_Politicas_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_Politicas</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="entity" type="TDCs:EMPRESA_DEL_CENTRO_Type"/>
+            <xs:element minOccurs="0" name="environment" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="attribute" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="restrictores" type="cbtypes:com.isb.al.facseg.security.cb.CB_Restrictores_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_Restrictores_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_Politicas</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="restrictor" nillable="true" type="cbtypes:com.isb.al.facseg.security.cb.CB_Restrictor_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_Restrictor_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_Politicas</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="code" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="description" type="TDCs:DESCRIPCION_LARGA_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_OrdinalAuthData_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_OrdinalAuthData</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="user" type="TDCs:UID_Type"/>
+            <xs:element minOccurs="0" name="positions" type="TDCs:POSITIONS_Type"/>
+            <xs:element minOccurs="0" name="posValues" type="TDCs:POSITION_VALUES_Type"/>
+            <xs:element minOccurs="0" name="posIteraciones" type="TDCs:POSITIONS_Type"/>
+            <xs:element minOccurs="0" name="alias" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="mobile" type="TDCs:TELEFONO_INTERNACIONAL_Type"/>
+            <xs:element minOccurs="0" name="card" type="TDCs:PAN_Type"/>
+            <xs:element minOccurs="0" name="numberContract" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="personalID" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="documento" type="TDCc:DOCUM_PERSONA_CORPORATIVO_Type"/>
+            <xs:element minOccurs="0" name="companyID" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_Search_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_Search</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="attEntity">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attEntity" nillable="true" type="TDCs:EMPRESA_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attEnvironment">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attEnvironment" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attAlias">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attAlias" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attUID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attUID" nillable="true" type="TDCs:UID_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attName">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attName" nillable="true" type="TDCs:NOMBRE_DE_PERSONA_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attSurname">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attSurname" nillable="true" type="TDCs:APELLIDO_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attFullName">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="dato" nillable="true" type="TDCs:NOMBRE_DE_PERSONA_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attPersonalID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attPersonalID" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attPersonNumber">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attPersonNumber" nillable="true" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attDocument">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attDocument" nillable="true" type="TDCc:DOCUM_PERSONA_CORPORATIVO_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attDocumentRep">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attDocumentRep" nillable="true" type="TDCc:DOCUM_PERSONA_CORPORATIVO_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attContractNumber">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attContractNumber" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attCreditCardNumber">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attCreditCardNumber" nillable="true" type="TDCs:PAN_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attLanguage">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attLanguage" nillable="true" type="TDCc:IDIOMA_CORPORATIVO_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attMobile">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attMobile" nillable="true" type="TDCs:TELEFONO_INTERNACIONAL_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attCompanyID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attCompanyID" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attCompanyName">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attCompanyName" nillable="true" type="TDCs:DESCRIPCION_MEDIA_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attLegalPersonNumber">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attLegalPersonNumber" nillable="true" type="TDCc:NUM_PERSONA_CLIENTE_Type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="attFirstTime" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attFirstTimeSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attSecondSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attLockUser" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attRevokedPassword" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attmTANRevokedSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attRevokedSign" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attExpirationDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Fechas_Type"/>
+            <xs:element minOccurs="0" name="attStartDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Fechas_Type"/>
+            <xs:element minOccurs="0" name="attEndDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Fechas_Type"/>
+            <xs:element minOccurs="0" name="attLastLogonDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Timestamps_Type"/>
+            <xs:element minOccurs="0" name="attBeforeLastLogonDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Timestamps_Type"/>
+            <xs:element minOccurs="0" name="attLastUnsuccessLogon" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Timestamps_Type"/>
+            <xs:element minOccurs="0" name="attLastChangePWDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Timestamps_Type"/>
+            <xs:element minOccurs="0" name="attLastSignDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Timestamps_Type"/>
+            <xs:element minOccurs="0" name="attSignMethods" type="cbtypes:com.isb.al.facseg.security.cb.CB_VerTypes_Type"/>
+            <xs:element minOccurs="0" name="attSignByPositionsActive" type="TDCs:INDICADOR_SI-NO_Type"/>
+            <xs:element minOccurs="0" name="attRevocationDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Timestamps_Type"/>
+            <xs:element minOccurs="0" name="attLockDate" type="cbtypes:com.isb.al.facseg.security.cb.CB_Search_Timestamps_Type"/>
+            <xs:element minOccurs="0" name="attPasswordActive" type="TDCs:INDICADOR_SI-NO_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_Search_Fechas_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_Search</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Fecha1" type="TDCs:FECHA_GENERICA_Type"/>
+            <xs:element minOccurs="0" name="Fecha2" type="TDCs:FECHA_GENERICA_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_Search_Timestamps_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_Search</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Timestamp1" type="TDCs:TIMESTAMP_ALTA_Type"/>
+            <xs:element minOccurs="0" name="Timestamp2" type="TDCs:TIMESTAMP_ALTA_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_UserList_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_UserList</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="user" nillable="true" type="cbtypes:com.isb.al.facseg.security.cb.CB_User_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_RemoteRepositories_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_RemoteRepositories_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="repository" nillable="true" type="TDCs:DESCRIPCION_BREVE_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_EnabledRiskPolicies_S_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_EnabledRiskPolicies_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="policy" nillable="true" type="cbtypes:com.isb.al.facseg.security.cb.CB_RiskPolicy_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="com.isb.al.facseg.security.cb.CB_RiskPolicy_Type">
+        <xs:annotation>
+            <xs:appinfo>ContextBean</xs:appinfo>
+            <xs:appinfo>com.isb.al.facseg.security.cb.CB_EnabledRiskPolicies_S</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="TDCs:DESCRIPCION_BREVE_Type"/>
+            <xs:element minOccurs="0" name="name" type="TDCs:DESCRIPCION_CORTA_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
